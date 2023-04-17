@@ -13,8 +13,6 @@ const io = new Server(server, {
   }
 });
 
-console.log(io)
-
 io.on('connection', async (socket) => {
   axios.get(api_uri+'/messages')
     .then((r) => {
