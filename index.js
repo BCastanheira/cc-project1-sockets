@@ -6,6 +6,8 @@ const server = createServer();
 
 var api_uri = process.env.API_URI+':3000' || 'localhost:3000';
 
+console.log('test deploy')
+
 const io = new Server(server, {
   cors: {
     origin: "*",
