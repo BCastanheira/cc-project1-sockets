@@ -4,7 +4,11 @@ import axios from 'axios';
 
 const server = createServer();
 
-var api_uri = process.env.API_URI || 'localhost:3000';
+var api_uri = process.env.API_URI
+
+if(process.env.ENVIRONMENT == 'local') {
+  var api_uri = 'http://'+api_uri+':3000';
+}
 
 const io = new Server(server, {
   cors: {
